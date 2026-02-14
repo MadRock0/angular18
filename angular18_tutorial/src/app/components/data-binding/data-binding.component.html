@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-4">
+        <h2>One way data binding from .ts to .html</h2>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-4"></div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <div class="row">
+            <div class="col-4">
+                interpolation
+                <h4>{{courseName}}</h4>
+                <div>{{rollNo}}</div>
+                <div>{{isIndian}}</div>
+                <div>{{currentDate}}</div>
+                
+                <input type="text" value="{{courseName}}" placeholder="Enter text" />
+                <input type="{{inputType}}">
+            </div>
+            <div class="col4">
+                Property binding
+                <div [class]="myclasName">Danger</div>
+                <input type="text" [value]="courseName" placeholder="Enter text" />
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <button class="btn btn-success" (click)="showAlert(courseName)">show welcome</button>
+        <br>
+        <button class="btn btn-warning" (click)="changeCourseName()">Change Course Name</button>
+    </div>
+    <div class="col-4">
+        <br><br>
+        <input [style.color]="myclasName" type="{{firstName}}" [(ngModel)] = "myclasName" placeholder="Enter course name" />
+        <h4 >{{firstName()}}</h4>
+        <select [(ngModel)]="courseName">
+            <option value="">select</option>
+            <option value="Angular">Angular</option>
+            <option value="React">React</option>
+            <option value="Vue">Vue</option>
+        </select>
+    </div>
+    <div class="col-6">
+            <h4>{{firstName()}}</h4>
+    </div>
+</div>
