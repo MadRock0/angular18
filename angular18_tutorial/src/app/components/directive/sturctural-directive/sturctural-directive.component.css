@@ -1,0 +1,105 @@
+:host {
+  display: block;
+  box-sizing: border-box;
+  padding: 18px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  color: #222;
+}
+
+/* header */
+.header {
+  background: #f1f3f5;
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+}
+.header h1 { margin: 0 0 6px 0; font-size: 1.25rem; }
+.header p { margin: 0; color: #444; }
+
+/* top row: 4 boxes using flexbox */
+.row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+.box {
+  flex: 1 1 0;
+  min-height: 110px;
+  border-radius: 8px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* box colors */
+.box--danger { background: #dc3545; }
+.box--success { background: #28a745; }
+.box--muted   { background: #6c757d; }
+.box--primary { background: #0d6efd; }
+
+/* controls row mirrors the boxes */
+.controls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.control {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  box-sizing: border-box;
+}
+
+/* button styles */
+.btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn--warn { background: #b02a37; }
+.btn--primary { background: #0b5ed7; }
+.btn--accent { background: #198754; }
+.btns { display: flex; gap: 8px; }
+
+/* inputs and select */
+.input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.12);
+  max-width: 160px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: #fff;
+  box-sizing: border-box;
+  max-width: 220px;
+  width: 100%;
+}
+
+/* small checkbox */
+.chk input { width: 16px; height: 16px; }
+
+/* center layout helpers */
+.inputs { display: flex; gap: 8px; align-items: center; justify-content: center; width: 100%; }
+.inline { display: flex; gap: 8px; align-items: center; justify-content: center; width: 100%; }
+
+/* responsive: stack on smaller screens */
+@media (max-width: 900px) {
+  .row, .controls { flex-direction: column; gap: 12px; }
+  .control { justify-content: flex-start; }
+  .box { min-height: 90px; }
+}

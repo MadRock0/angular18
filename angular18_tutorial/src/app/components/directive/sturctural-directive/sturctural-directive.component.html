@@ -1,0 +1,82 @@
+<div class="container">
+  <header class="header">
+    <h1>Structural Directive</h1>
+    <p>Simple flexible layout with 4 boxes and controls under each.</p>
+  </header>
+
+  <div class="row">
+    <div class="box box--danger" *ngIf="div1hide">Div-1</div>
+    <div class="box box--success"  *ngIf="div2hide">Div-2</div>
+    <div class="box box--muted"*ngIf="num1 == num2">Div-3</div>
+    <div class="box box--primary">Div-4</div>
+  </div>
+
+  <div class="controls">
+    <div class="control">
+      <div class="btns">
+        <button class="btn btn--warn"(click)="hide()">Hide</button>
+        <button class="btn btn--primary"(click)="show()">Show</button>
+      </div>
+    </div>
+
+    <div class="control">
+      <button class="btn btn--accent"(click)="toggle()">Toggle</button>
+    </div>
+
+    <div class="control">
+      <input class="input" placeholder="num1" [(ngModel)]="num1"/>
+      <input class="input" placeholder="num2" [(ngModel)]="num2" />
+    </div>
+
+    <div class="control">
+      <label class="chk"><input type="checkbox" /></label>
+      <select class="select">
+        <option value="">select state</option>
+        <option value="USA">USA</option>
+        <option value="India">India</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="ngforexamples">
+    <div class="row">
+    <div class="box box--danger" >
+      <ul>
+        <li *ngFor="let city of cityArray">{{city}}</li>
+      </ul>
+    </div>
+    <div class="box box--success">
+      <select name="" id="">
+        <option value="" aria-placeholder="select" *ngFor="let cityname of cityArray">{{cityname}}</option>
+      </select>
+    </div>
+    <div class="box box--muted">
+      <select>
+        <option value="{{stud.studId}}" *ngFor="let stud of studentList">{{stud.name}}</option>
+      </select>
+    </div>
+    <div class="box box--primary">
+      <table>
+        <thead>
+          <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let stud of studentList; index as i">
+            <td>{{i+1}}</td>
+            <td>{{stud.name}}</td>
+            <td>{{stud.age}}</td>
+            <td>{{stud.city}}</td>
+            <td>{{stud.isActive ? 'Active' : 'Inactive'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+</div>
