@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { AddEmployeeComponent } from "./components/add-employee/add-employee.component";
-import { EmployeeyeeListComponent } from './components/employeeyee-list/employeeyee-list.component';
-import { DataBindingComponent } from './components/data-binding/data-binding.component';
-import { SturcturalDirectiveComponent } from './components/directive/sturctural-directive/sturctural-directive.component';
-
+import { RouterLink, RouterOutlet } from '@angular/router';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,DataBindingComponent,SturcturalDirectiveComponent],
+  imports: [RouterOutlet,RouterLink,MatToolbarModule, MatButtonModule, MatIconModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sturctural-directive',
@@ -21,6 +22,8 @@ import { MatCardModule } from '@angular/material/card';
   styleUrl: './sturctural-directive.component.css'
 })
 export class SturcturalDirectiveComponent {
+
+  constructor(private router: Router) { }
 
   div1hide: boolean = false;
   div2hide: boolean = false;
@@ -40,4 +43,8 @@ export class SturcturalDirectiveComponent {
   hide() { this.div1hide = false; }
   show() { this.div1hide = true; }
   toggle() { this.div2hide = !this.div2hide; }
+
+  navigateTo(){
+    this.router.navigateByUrl('/attribute-directive');
+  }
 }

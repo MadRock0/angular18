@@ -1,10 +1,33 @@
-<h1>hello</h1>
-<!-- <table>
+<!-- <h1>Angular 18</h1>
+<table>
     <tr>
         <td><app-add-employee></app-add-employee></td>
         <td><app-employeeyee-list></app-employeeyee-list></td>
     </tr>
-</table> -->
+</table>
 
-<!-- <app-data-binding></app-data-binding> -->
-<app-sturctural-directive></app-sturctural-directive>
+<app-data-binding></app-data-binding>
+ <app-sturctural-directive></app-sturctural-directive>
+ <app-attribute-directive></app-attribute-directive>
+ -->
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a routerLink="/employee-list">Employee List</a></li>
+      <li><a routerLink="/add-emp">Add Employee</a></li>
+      <li><a routerLink="/data-binding">Data Binding</a></li>
+      <li><a routerLink="/attribute-directive">Attribute Directive</a></li>
+      <li><a routerLink="/structural-directive">Structural Directive</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container"><router-outlet></router-outlet></div>
