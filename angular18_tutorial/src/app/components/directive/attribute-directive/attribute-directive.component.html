@@ -1,0 +1,71 @@
+<div class="container">
+    <header class="header">
+        <h1>Attribute Directive</h1>
+        <p>[ngClass],[ngStyle] <br>Attribute directives modify the appearance or behavior of an element, component, or
+            another directive.</p>
+            <button routerLink="/structural-directive">go to strustural directive</button>
+    </header>
+
+    <div class="row">
+        <div class="box" [ngClass]="div1Bgcolor">Div-1</div>
+        <div class="box" [ngClass]="istoggled ? 'box--success' : 'box--muted'">Div-2</div>
+        <div class="box" [ngClass]="num1 == num2 ? 'box--primary' : 'box--success'">Div-3</div>
+        <div class="box box--primary">
+            <table>
+                <thead>
+                    <tr>
+                        <td>name</td>
+                        <td>studId</td>
+                        <td>gender</td>
+                        <td>age</td>
+                        <td>city</td>
+                        <td>isActive</td>
+                        <td>totleMarks</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let stud of studentList">
+                        <td>{{stud.name}}</td>
+                        <td>{{stud.studId}}</td>
+                        <td>{{stud.gender}}</td>
+                        <td>{{stud.age}}</td>
+                        <td>{{stud.city}}</td>
+                        <td [ngStyle]="{backgroundColor: stud.isActive ? 'green' : 'red', color: 'white'}">{{stud.isActive ? 'Active' : 'Inactive'}}</td>
+                        <td><mat-progress-bar mode="determinate" [value]="stud.totleMarks"
+                                color="primary"></mat-progress-bar></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="control">
+            <div class="btns">
+                <button class="btn btn--warn" (click)="addRed()">Add red</button>
+                <button class="btn btn--primary" (click)="addBlue()">Add blue</button>
+            </div>
+        </div>
+
+        <div class="control">
+            <button class="btn btn--accent" (click)="toggleddiv2()">Toggle</button>
+        </div>
+
+        <div class="control">
+            <input class="input" placeholder="num1" [(ngModel)]="num1" />
+            <input class="input" placeholder="num2" [(ngModel)]="num2" />
+        </div>
+
+        <div class="control">
+            <label class="chk"><input type="checkbox" /></label>
+            <select class="select">
+                <option value="">select state</option>
+                <option value="USA">USA</option>
+                <option value="India">India</option>
+            </select>
+        </div>
+    </div>
+
+
+</div>
